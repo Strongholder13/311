@@ -32,7 +32,7 @@ public class UserController {
     @PostMapping("/save")
     public String saveUser(@ModelAttribute("user") User user){
         userService.add(user);
-        return "redirect: /";
+        return "redirect:/";
     }
     @GetMapping("/edit")
     public String editeUser(@RequestParam("id") int id, Model model){
@@ -46,7 +46,7 @@ public class UserController {
         userService.update(user);
         return "redirect:/";
     }
-    @DeleteMapping ("/delete")
+    @PostMapping ("/delete")
     public String delete(@RequestParam("id") int id) {
         userService.delete(id);
         return "redirect:/";
